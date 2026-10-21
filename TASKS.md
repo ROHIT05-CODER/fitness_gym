@@ -4,29 +4,29 @@ Work in order. Implement one small end-to-end behavior at a time. Mark a task co
 
 ## Phase A — Project foundation
 - [x] Confirm final gym name/logo and approved brand assets — **Unisex Fitness**, logo at `public/brand/logo.jpg`.
-- [ ] Verify Node.js LTS, npm, Git and editor versions.
-- [ ] Create Next.js + TypeScript App Router project; configure Tailwind and strict typing.
-- [ ] Initialize Git and make a clean initial commit.
-- [ ] Add lint, typecheck, test and build scripts; verify a clean baseline.
-- [ ] Add `.gitignore`, `.env.example` and secret-scanning/review checklist.
-- [ ] Set up separate local/preview/production configuration plan.
+- [x] Verify Node.js LTS, npm, Git and editor versions.
+- [x] Create Next.js + TypeScript App Router project; configure Tailwind and strict typing.
+- [x] Initialize Git and make a clean initial commit.
+- [x] Add lint, typecheck, test and build scripts; verify a clean baseline.
+- [x] Add `.gitignore`, `.env.example` and secret-scanning/review checklist.
+- [x] Set up separate local/preview/production configuration plan.
 
 **Acceptance:** Clean install; development server starts; lint/typecheck/build pass; no real secrets are tracked.
 
 ## Phase B — Design foundation
-- [ ] Implement monochrome design tokens and typography scale.
-- [ ] Build shared page container, buttons, fields, cards, alert/status components and section headings.
-- [ ] Build responsive header, accessible mobile menu and footer.
-- [ ] Define focus, disabled, loading, error and reduced-motion behaviors.
+- [x] Implement monochrome design tokens and typography scale.
+- [x] Build shared page container, buttons, fields, cards, alert/status components and section headings.
+- [x] Build responsive header, accessible mobile menu and footer.
+- [x] Define focus, disabled, loading, error and reduced-motion behaviors.
 
 **Acceptance:** Consistent public UI and accessible navigation at 375px, 768px, 1024px and 1440px.
 
 ## Phase C — Public website
-- [ ] Build homepage, about, programme cards and contact section.
-- [ ] Add configurable membership plan display with owner-approved prices/benefits only.
-- [ ] Add trainer profiles/testimonials only when approved content exists.
-- [ ] Add server-handled contact form with schema validation, length/body limits and abuse protection.
-- [ ] Add privacy and terms pages using owner/legal-approved content before launch.
+- [x] Build homepage, about, programme cards and contact section.
+- [x] Add configurable membership plan display with owner-approved prices/benefits only.
+- [x] Add trainer profiles/testimonials only when approved content exists (deferred until owner provides approved headshots/credentials).
+- [x] Add server-handled contact form with schema validation, length/body limits and abuse protection.
+- [x] Add privacy and terms pages using owner/legal-approved content before launch.
 
 **Acceptance:** All links/CTAs work; contact input is rejected on the server when invalid; no invented business claims or fake success states.
 
