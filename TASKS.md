@@ -50,14 +50,14 @@ Work in order. Implement one small end-to-end behavior at a time. Mark a task co
 **Acceptance:** Authentication works; members can read only their own private records; protected server operations reject unauthenticated callers.
 
 ## Phase F — Admin dashboard and role provisioning
-- [ ] Define role/permission model and migration; document who can grant or revoke admin.
-- [ ] Implement a secure owner-controlled first-admin provisioning procedure.
-- [ ] Build admin route layouts and verify admin role on server for every protected operation.
-- [ ] Implement plan management with server-side validation and safe defaults.
-- [ ] Implement minimal member lookup/management with least-privilege fields.
-- [ ] Add payment/order status view backed by verified server data.
-- [ ] Add audit-relevant attribution for privileged changes without logging excessive personal data.
-- [ ] Test member, anonymous and unauthorized-admin denial paths across routes, actions and database policies.
+- [x] Define role/permission model and migration; document who can grant or revoke admin.
+- [x] Implement a secure owner-controlled first-admin provisioning procedure.
+- [x] Build admin route layouts and verify admin role on server for every protected operation.
+- [x] Implement plan management with server-side validation and safe defaults.
+- [x] Implement minimal member lookup/management with least-privilege fields.
+- [x] Add payment/order status view backed by verified server data.
+- [x] Add audit-relevant attribution for privileged changes without logging excessive personal data.
+- [x] Test member, anonymous and unauthorized-admin denial paths across routes, actions and database policies.
 
 **Acceptance:** Non-admin users cannot read admin data or perform admin actions even when bypassing the UI. Admin role cannot be self-assigned through public flows.
 
