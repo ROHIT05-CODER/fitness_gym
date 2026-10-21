@@ -39,13 +39,13 @@ Work in order. Implement one small end-to-end behavior at a time. Mark a task co
 **Acceptance:** All core content and actions work without 3D; motion does not block the primary CTA.
 
 ## Phase E — Authentication and member portal
-- [ ] Configure Supabase Auth using documented server/client patterns.
-- [ ] Implement sign-up, sign-in, sign-out and account recovery for selected auth method.
-- [ ] Define profile schema and migration; do not accept role values from user profile input.
-- [ ] Create and test RLS policies before connecting member-facing pages to private data.
-- [ ] Build member dashboard for own profile, memberships and verified purchase/payment history.
-- [ ] Add server-side authorization/ownership checks to every member data operation.
-- [ ] Test unauthenticated access, expired sessions, and attempts to access another member's records.
+- [x] Configure Supabase Auth using documented server/client patterns.
+- [x] Implement sign-up, sign-in, sign-out and account recovery for selected auth method.
+- [x] Define profile schema and migration; do not accept role values from user profile input.
+- [x] Create and test RLS policies before connecting member-facing pages to private data.
+- [x] Build member dashboard for own profile, memberships and verified purchase/payment history.
+- [x] Add server-side authorization/ownership checks to every member data operation.
+- [x] Test unauthenticated access, expired sessions, and attempts to access another member's records.
 
 **Acceptance:** Authentication works; members can read only their own private records; protected server operations reject unauthenticated callers.
 
