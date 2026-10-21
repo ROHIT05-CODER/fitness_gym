@@ -1,11 +1,12 @@
 # Project Memory
 
 ## Current state
-- Phase A (Project Foundation), Phase B (Design Foundation), and Phase C (Public Website) have been implemented and verified.
+- Phase A (Project Foundation), Phase B (Design Foundation), Phase C (Public Website), Phase D (3D Hero Enhancement), and Phase E (Authentication & Member Portal) have been implemented and verified.
 - Production build (`npm run build`) and ESLint (`npm run lint`) pass with 0 errors and 0 warnings.
 - Clean git history with distinct commits for each phase.
-- Gym name is **Unisex Fitness**. Logo confirmed: `public/brand/logo.jpg` (bold black & white dumbbell illustration, circular badge style).
-- Public website fully operational: Home, Programmes (6 detailed disciplines), Memberships (comparison + FAQs), About (philosophy + specs), Contact (validated API + form), Privacy Policy, and Terms of Service.
+- Gym name is **Unisex Fitness**. Logo confirmed: `public/brand/logo.jpg`.
+- 3D hero sculpture powered by Three.js with pointer parallax, WebGL availability detection, and `prefers-reduced-motion` safety.
+- Complete Supabase Auth flow, SQL schema migration (`supabase/migrations/20261021_init_schema.sql`), strict RLS policies, and Member Dashboard (`/member`) with Partial Prerendering.
 
 ## Current proposed stack
 - Next.js App Router, TypeScript, Tailwind CSS, Framer Motion and optional Three.js / React Three Fiber.
