@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import HeroVisual3D from "@/components/3d/HeroVisual3D";
 
 const programmes = [
   {
@@ -64,57 +65,67 @@ export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative min-h-[92vh] flex flex-col items-center justify-center text-center px-4 bg-black overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#171717_0%,_#000000_70%)]" />
-        <motion.div
-          className="relative z-10 max-w-4xl"
-          initial="hidden"
-          animate="visible"
-          variants={{ visible: { transition: { staggerChildren: 0.15 } } }}
-        >
-          <motion.p
-            variants={fadeUp}
-            className="text-xs tracking-[0.4em] text-[#BDBDBD] uppercase mb-6"
-          >
-            Unisex Fitness
-          </motion.p>
-          <motion.h1
-            variants={fadeUp}
-            className="font-display text-6xl sm:text-8xl lg:text-9xl tracking-wider text-white leading-none mb-6"
-          >
-            BUILT BY
-            <br />
-            DISCIPLINE.
-            <br />
-            <span className="text-[#BDBDBD]">DEFINED BY</span>
-            <br />
-            STRENGTH.
-          </motion.h1>
-          <motion.p
-            variants={fadeUp}
-            className="text-base sm:text-lg text-[#BDBDBD] max-w-xl mx-auto mb-10"
-          >
-            A premium unisex fitness experience built for those who refuse to
-            settle. Every session. Every rep. Every result.
-          </motion.p>
+      <section className="relative min-h-[92vh] flex flex-col justify-center px-4 sm:px-6 lg:px-8 bg-black overflow-hidden py-16 sm:py-24">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#171717_0%,_#000000_75%)]" />
+
+        <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Hero Typography & CTAs */}
           <motion.div
-            variants={fadeUp}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="lg:col-span-7 text-center lg:text-left"
+            initial="hidden"
+            animate="visible"
+            variants={{ visible: { transition: { staggerChildren: 0.12 } } }}
           >
-            <Link
-              href="/memberships"
-              className="px-8 py-4 bg-white text-black font-semibold text-sm tracking-widest hover:bg-[#BDBDBD] transition-colors"
+            <motion.p
+              variants={fadeUp}
+              className="text-xs tracking-[0.4em] text-[#BDBDBD] uppercase mb-4"
             >
-              JOIN NOW
-            </Link>
-            <Link
-              href="/programmes"
-              className="px-8 py-4 border border-white text-white font-semibold text-sm tracking-widest hover:bg-white hover:text-black transition-colors"
+              Unisex Fitness • Est. 2026
+            </motion.p>
+            <motion.h1
+              variants={fadeUp}
+              className="font-display text-5xl sm:text-7xl lg:text-8xl tracking-wider text-white leading-none mb-6"
             >
-              EXPLORE PROGRAMMES
-            </Link>
+              BUILT BY
+              <br />
+              DISCIPLINE.
+              <br />
+              <span className="text-[#BDBDBD]">DEFINED BY</span>
+              <br />
+              STRENGTH.
+            </motion.h1>
+            <motion.p
+              variants={fadeUp}
+              className="text-sm sm:text-base text-[#A0A0A0] max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed"
+            >
+              A premium unisex fitness facility built for those who refuse to
+              settle. Calibrated strength platforms, elite conditioning gear, and
+              zero intimidation.
+            </motion.p>
+            <motion.div
+              variants={fadeUp}
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            >
+              <Link
+                href="/memberships"
+                className="px-8 py-4 bg-white text-black font-semibold text-sm tracking-widest hover:bg-[#BDBDBD] transition-colors text-center"
+              >
+                JOIN NOW
+              </Link>
+              <Link
+                href="/programmes"
+                className="px-8 py-4 border border-white text-white font-semibold text-sm tracking-widest hover:bg-white hover:text-black transition-colors text-center"
+              >
+                EXPLORE PROGRAMMES
+              </Link>
+            </motion.div>
           </motion.div>
-        </motion.div>
+
+          {/* 3D Visual Element */}
+          <div className="lg:col-span-5 flex items-center justify-center">
+            <HeroVisual3D />
+          </div>
+        </div>
       </section>
 
       {/* ABOUT */}

@@ -31,10 +31,10 @@ Work in order. Implement one small end-to-end behavior at a time. Mark a task co
 **Acceptance:** All links/CTAs work; contact input is rejected on the server when invalid; no invented business claims or fake success states.
 
 ## Phase D — 3D enhancement
-- [ ] Prototype one lightweight 3D gym visual.
-- [ ] Add loading/error fallback and static alternative.
-- [ ] Respect reduced-motion preferences and test unsupported WebGL behavior.
-- [ ] Inspect bundle size, loading and behavior on mobile hardware.
+- [x] Prototype one lightweight 3D gym visual.
+- [x] Add loading/error fallback and static alternative.
+- [x] Respect reduced-motion preferences and test unsupported WebGL behavior.
+- [x] Inspect bundle size, loading and behavior on mobile hardware.
 
 **Acceptance:** All core content and actions work without 3D; motion does not block the primary CTA.
 
