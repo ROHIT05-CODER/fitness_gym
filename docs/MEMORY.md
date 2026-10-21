@@ -1,10 +1,11 @@
 # Project Memory
 
 ## Current state
-- Phase 3 planning pack updated to match the user's selected scope.
+- Phase A (Project Foundation), Phase B (Design Foundation), and Phase C (Public Website) have been implemented and verified.
+- Production build (`npm run build`) and ESLint (`npm run lint`) pass with 0 errors and 0 warnings.
+- Clean git history with distinct commits for each phase.
 - Gym name is **Unisex Fitness**. Logo confirmed: `public/brand/logo.jpg` (bold black & white dumbbell illustration, circular badge style).
-- Intended product: premium black-and-white gym website with lightweight 3D hero, member authentication/dashboard, protected admin dashboard, and online membership payments.
-- Application source code has not been generated; this pack contains planning/context files only.
+- Public website fully operational: Home, Programmes (6 detailed disciplines), Memberships (comparison + FAQs), About (philosophy + specs), Contact (validated API + form), Privacy Policy, and Terms of Service.
 
 ## Current proposed stack
 - Next.js App Router, TypeScript, Tailwind CSS, Framer Motion and optional Three.js / React Three Fiber.
