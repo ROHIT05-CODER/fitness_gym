@@ -1,69 +1,281 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { motion } from "framer-motion";
+import Link from "next/link";
+
+const programmes = [
+  {
+    title: "Strength Training",
+    desc: "Build raw power and muscular endurance through progressive overload.",
+  },
+  {
+    title: "Bodybuilding",
+    desc: "Sculpt your physique with targeted hypertrophy programming.",
+  },
+  {
+    title: "Functional Fitness",
+    desc: "Train movements that carry over to real life and sport.",
+  },
+  {
+    title: "HIIT",
+    desc: "High-intensity intervals for maximum calorie burn and conditioning.",
+  },
+  {
+    title: "Personal Training",
+    desc: "One-on-one coaching tailored to your individual goals.",
+  },
+  {
+    title: "Weight Management",
+    desc: "Structured programmes combining nutrition guidance and training.",
+  },
+];
+
+const memberships = [
+  {
+    name: "Basic",
+    price: "TBD",
+    benefits: ["Gym access", "Locker room", "Basic equipment"],
+    highlight: false,
+  },
+  {
+    name: "Pro",
+    price: "TBD",
+    benefits: ["All Basic features", "Group classes", "Fitness assessment"],
+    highlight: true,
+  },
+  {
+    name: "Elite",
+    price: "TBD",
+    benefits: [
+      "All Pro features",
+      "Personal training sessions",
+      "Priority booking",
+    ],
+    highlight: false,
+  },
+];
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <>
+      {/* HERO */}
+      <section className="relative min-h-[92vh] flex flex-col items-center justify-center text-center px-4 bg-black overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#171717_0%,_#000000_70%)]" />
+        <motion.div
+          className="relative z-10 max-w-4xl"
+          initial="hidden"
+          animate="visible"
+          variants={{ visible: { transition: { staggerChildren: 0.15 } } }}
+        >
+          <motion.p
+            variants={fadeUp}
+            className="text-xs tracking-[0.4em] text-[#BDBDBD] uppercase mb-6"
+          >
+            Unisex Fitness
+          </motion.p>
+          <motion.h1
+            variants={fadeUp}
+            className="font-display text-6xl sm:text-8xl lg:text-9xl tracking-wider text-white leading-none mb-6"
+          >
+            BUILT BY
+            <br />
+            DISCIPLINE.
+            <br />
+            <span className="text-[#BDBDBD]">DEFINED BY</span>
+            <br />
+            STRENGTH.
+          </motion.h1>
+          <motion.p
+            variants={fadeUp}
+            className="text-base sm:text-lg text-[#BDBDBD] max-w-xl mx-auto mb-10"
+          >
+            A premium unisex fitness experience built for those who refuse to
+            settle. Every session. Every rep. Every result.
+          </motion.p>
+          <motion.div
+            variants={fadeUp}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <Link
+              href="/memberships"
+              className="px-8 py-4 bg-white text-black font-semibold text-sm tracking-widest hover:bg-[#BDBDBD] transition-colors"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              JOIN NOW
+            </Link>
+            <Link
+              href="/programmes"
+              className="px-8 py-4 border border-white text-white font-semibold text-sm tracking-widest hover:bg-white hover:text-black transition-colors"
             >
-              Learning
-            </a>{" "}
-            center.
+              EXPLORE PROGRAMMES
+            </Link>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* ABOUT */}
+      <section className="bg-[#F5F5F5] text-black py-24 px-4">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <p className="text-xs tracking-[0.4em] text-[#BDBDBD] uppercase mb-4">
+              About Us
+            </p>
+            <h2 className="font-display text-5xl sm:text-6xl tracking-wide text-black mb-6">
+              WHERE EVERYONE
+              <br />
+              BELONGS
+            </h2>
+            <p className="text-[#171717] leading-relaxed mb-4">
+              Unisex Fitness is a premium gym built for all. Whether you are
+              just starting out or competing at the highest level, our
+              environment, equipment and coaching are designed to push you
+              further.
+            </p>
+            <p className="text-[#171717] leading-relaxed">
+              No egos. No barriers. Just results.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-6">
+            {[
+              { stat: "—", label: "Members" },
+              { stat: "—", label: "Programmes" },
+              { stat: "—", label: "Expert Trainers" },
+              { stat: "—", label: "Years Running" },
+            ].map((item) => (
+              <div key={item.label} className="border border-[#343434] p-6">
+                <p className="font-display text-5xl text-black mb-1">
+                  {item.stat}
+                </p>
+                <p className="text-sm text-[#BDBDBD]">{item.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PROGRAMMES */}
+      <section className="bg-black py-24 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="text-xs tracking-[0.4em] text-[#BDBDBD] uppercase mb-4">
+              What We Offer
+            </p>
+            <h2 className="font-display text-5xl sm:text-6xl tracking-wide text-white">
+              TRAINING PROGRAMMES
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[#343434]">
+            {programmes.map((prog) => (
+              <div
+                key={prog.title}
+                className="bg-black p-8 hover:bg-[#171717] transition-colors group"
+              >
+                <h3 className="font-display text-2xl tracking-wide text-white mb-3 group-hover:text-[#BDBDBD] transition-colors">
+                  {prog.title}
+                </h3>
+                <p className="text-sm text-[#BDBDBD] leading-relaxed">
+                  {prog.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link
+              href="/programmes"
+              className="inline-block px-8 py-4 border border-white text-white text-sm tracking-widest font-semibold hover:bg-white hover:text-black transition-colors"
+            >
+              VIEW ALL PROGRAMMES
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* MEMBERSHIPS */}
+      <section className="bg-[#171717] py-24 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="text-xs tracking-[0.4em] text-[#BDBDBD] uppercase mb-4">
+              Membership Plans
+            </p>
+            <h2 className="font-display text-5xl sm:text-6xl tracking-wide text-white">
+              CHOOSE YOUR PLAN
+            </h2>
+            <p className="text-[#BDBDBD] mt-4 text-sm">
+              Pricing and plan details confirmed by the owner will appear here.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {memberships.map((plan) => (
+              <div
+                key={plan.name}
+                className={`p-8 border flex flex-col ${
+                  plan.highlight
+                    ? "border-white bg-black"
+                    : "border-[#343434]"
+                }`}
+              >
+                {plan.highlight && (
+                  <span className="text-xs tracking-widest bg-white text-black px-2 py-1 inline-block mb-4 self-start font-semibold">
+                    MOST POPULAR
+                  </span>
+                )}
+                <h3 className="font-display text-3xl tracking-wide text-white mb-2">
+                  {plan.name}
+                </h3>
+                <p className="text-3xl font-bold text-[#BDBDBD] mb-6">
+                  {plan.price}
+                </p>
+                <ul className="space-y-2 mb-8 flex-1">
+                  {plan.benefits.map((b) => (
+                    <li
+                      key={b}
+                      className="text-sm text-[#BDBDBD] flex items-center gap-2"
+                    >
+                      <span className="text-white">✓</span> {b}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href="/memberships"
+                  className={`px-6 py-3 text-sm font-semibold tracking-widest text-center transition-colors ${
+                    plan.highlight
+                      ? "bg-white text-black hover:bg-[#BDBDBD]"
+                      : "border border-white text-white hover:bg-white hover:text-black"
+                  }`}
+                >
+                  GET STARTED
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT CTA */}
+      <section className="bg-black border-t border-[#343434] py-24 px-4 text-center">
+        <div className="max-w-2xl mx-auto">
+          <p className="text-xs tracking-[0.4em] text-[#BDBDBD] uppercase mb-4">
+            Get In Touch
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          <h2 className="font-display text-5xl sm:text-6xl tracking-wide text-white mb-6">
+            READY TO START?
+          </h2>
+          <p className="text-[#BDBDBD] mb-10">
+            Have questions? Our team is ready to help you begin your fitness
+            journey.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block px-10 py-4 bg-white text-black font-semibold text-sm tracking-widest hover:bg-[#BDBDBD] transition-colors"
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            CONTACT US
+          </Link>
         </div>
-      </main>
-    </div>
+      </section>
+    </>
   );
 }
