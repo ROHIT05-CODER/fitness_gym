@@ -113,7 +113,6 @@ export async function createCheckoutOrder({
   if (isStripeConfigured() && stripe) {
     try {
       const session = await stripe.checkout.sessions.create({
-        payment_method_types: ["card"],
         mode: "payment",
         customer_email: userEmail,
         client_reference_id: internalOrderId,
