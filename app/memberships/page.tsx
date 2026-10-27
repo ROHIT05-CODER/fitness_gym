@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { SectionHeader, Card, Badge, Button } from "@/components/ui";
+import { SectionHeader, Card, Badge } from "@/components/ui";
+import CheckoutButton from "@/components/checkout/CheckoutButton";
 import { INITIAL_PLANS, COMPARISON_FEATURES, FAQS } from "@/features/memberships/data";
 import { Check, X, ChevronDown, ShieldCheck } from "lucide-react";
 
@@ -80,14 +81,11 @@ export default function MembershipsPage() {
                 </div>
 
                 <div className="pt-6 border-t border-[#2B2B2B]">
-                  <Button
-                    href="/sign-in"
+                  <CheckoutButton
+                    planId={plan.id}
+                    label={plan.ctaText}
                     variant={plan.highlight ? "primary" : "outline"}
-                    size="md"
-                    fullWidth
-                  >
-                    {plan.ctaText}
-                  </Button>
+                  />
                   <p className="text-[11px] text-[#707070] text-center mt-3">
                     Authoritative server validation applied at checkout
                   </p>
