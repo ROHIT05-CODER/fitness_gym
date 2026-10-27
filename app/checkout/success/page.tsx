@@ -8,7 +8,12 @@ export const metadata = {
   description: "Verifying your membership transaction status.",
 };
 
-async function SuccessContent({ orderId }: { orderId?: string }) {
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
+
+async function SuccessContent({ searchParams }: { searchParams: SearchParams }) {
+  const params = await searchParams;
+  const orderId = typeof params.order_id === "string" ? params.order_id : undefined;
+
   let orderStatus: string = "pending";
   let planName: string = "Membership Plan";
 
@@ -79,14 +84,11 @@ async function SuccessContent({ orderId }: { orderId?: string }) {
   );
 }
 
-export default async function CheckoutSuccessPage({
+export default function CheckoutSuccessPage({
   searchParams,
 }: {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+  searchParams: SearchParams;
 }) {
-  const params = await searchParams;
-  const orderId = typeof params.order_id === "string" ? params.order_id : undefined;
-
   return (
     <div className="bg-black text-white min-h-[85vh] flex items-center justify-center py-16 px-4">
       <Suspense
@@ -96,7 +98,7 @@ export default async function CheckoutSuccessPage({
           </div>
         }
       >
-        <SuccessContent orderId={orderId} />
+        <SuccessContent searchParams={searchParams} />
       </Suspense>
     </div>
   );
